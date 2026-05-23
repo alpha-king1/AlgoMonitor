@@ -342,8 +342,6 @@
   .acc-table tr:last-child td { border-bottom: none; }
   .asset-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; font-size: 10px; font-weight: 700; font-family: var(--mono); margin-right: 8px; }
   .icon-gold { background: rgba(240,180,41,0.15); color: var(--gold); }
-  .icon-eth { background: rgba(164,135,250,0.15); color: var(--purple); }
-  .icon-sol { background: rgba(78,205,196,0.15); color: var(--blue); }
 
   /* ALGO LOG */
   .algo-entry {
@@ -534,30 +532,12 @@
       </div>
       <div class="signal-row">
         <div>
-          <div class="signal-pair">ETH/USD</div>
-          <div class="signal-meta">MACD Divergence</div>
-        </div>
-        <span class="signal-action signal-sell">SELL</span>
-        <div class="signal-meta">3,812.00</div>
-        <span class="badge badge-red">-0.4%</span>
-      </div>
-      <div class="signal-row">
-        <div>
           <div class="signal-pair">XAU/USD</div>
           <div class="signal-meta">Bollinger Band Squeeze</div>
         </div>
         <span class="signal-action signal-buy">BUY</span>
         <div class="signal-meta">2,340.10</div>
         <span class="badge badge-green">+1.8%</span>
-      </div>
-      <div class="signal-row">
-        <div>
-          <div class="signal-pair">SOL/USD</div>
-          <div class="signal-meta">Volume Breakout</div>
-        </div>
-        <span class="signal-action signal-buy">BUY</span>
-        <div class="signal-meta">142.30</div>
-        <span class="badge badge-green">+2.1%</span>
       </div>
 
       <div class="mini-chart" style="margin-top:16px;">
@@ -759,30 +739,6 @@
     </div>
   </div>
 
-  <div class="trade-card" style="border-color:rgba(6,214,160,0.15);">
-    <div class="trade-header">
-      <div>
-        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px;">Ethereum · Long</div>
-        <div class="trade-pair" style="color:var(--purple)">ETH/USD</div>
-      </div>
-      <div>
-        <div class="trade-pnl" style="color:var(--green)">+$732.07</div>
-        <div style="font-size:12px;color:var(--green);text-align:right">+1.83%</div>
-      </div>
-    </div>
-    <div class="trade-grid">
-      <div class="trade-stat"><div class="trade-stat-label">Entry Price</div><div class="trade-stat-val">$3,740.00</div></div>
-      <div class="trade-stat"><div class="trade-stat-label">Current</div><div class="trade-stat-val" style="color:var(--purple)">$3,812.00</div></div>
-      <div class="trade-stat"><div class="trade-stat-label">Past P&L</div><div class="trade-stat-val" style="color:var(--green)">+$1,450</div></div>
-      <div class="trade-stat"><div class="trade-stat-label">Stop Loss</div><div class="trade-stat-val" style="color:var(--red)">$3,680.00</div></div>
-      <div class="trade-stat"><div class="trade-stat-label">Take Profit</div><div class="trade-stat-val" style="color:var(--green)">$3,950.00</div></div>
-      <div class="trade-stat"><div class="trade-stat-label">Size</div><div class="trade-stat-val">2.4 ETH</div></div>
-    </div>
-    <div class="trade-actions">
-      <button class="btn btn-primary">Adjust SL/TP</button>
-      <button class="btn btn-danger">Close Trade</button>
-    </div>
-  </div>
 
   <div class="card">
     <div class="section-title" style="margin-bottom:12px;">Recent Execution Logs</div>
@@ -805,12 +761,6 @@
           <td>10:45:09</td>
           <td style="color:var(--gold)">XAU/USD</td>
           <td>BUY executed<br><span style="font-size:10px;color:var(--text3)">0.5 oz @ $2,302.10</span></td>
-          <td><span class="badge badge-green" style="font-size:10px;">SUCCESS</span></td>
-        </tr>
-        <tr>
-          <td>09:52:33</td>
-          <td style="color:var(--purple)">ETH/USD</td>
-          <td>BUY executed<br><span style="font-size:10px;color:var(--text3)">2.4 ETH @ $3,740.00</span></td>
           <td><span class="badge badge-green" style="font-size:10px;">SUCCESS</span></td>
         </tr>
       </tbody>
@@ -902,16 +852,6 @@
           <td><span class="asset-icon icon-gold">Au</span><span style="font-weight:600;">XAU/USD</span></td>
           <td style="font-family:var(--mono)">162</td>
           <td><span class="badge badge-green">84%</span></td>
-        </tr>
-        <tr>
-          <td><span class="asset-icon icon-eth">Ξ</span><span style="font-weight:600;">ETH/USD</span></td>
-          <td style="font-family:var(--mono)">90</td>
-          <td><span class="badge badge-green">76%</span></td>
-        </tr>
-        <tr>
-          <td><span class="asset-icon icon-sol">◎</span><span style="font-weight:600;">SOL/USD</span></td>
-          <td style="font-family:var(--mono)">215</td>
-          <td><span class="badge badge-gold">71%</span></td>
         </tr>
       </tbody>
     </table>
