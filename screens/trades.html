@@ -1,0 +1,62 @@
+<!-- =====================
+     SCREEN 3: ACTIVE TRADES
+     ===================== -->
+<div class="screen" id="screen-trades">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div class="page-title">Active Trades</div>
+        <div class="page-sub">2 open positions · XAU/USD focus</div>
+      </div>
+      <span class="badge badge-gold">Portfolio $42,850</span>
+    </div>
+  </div>
+
+  <div class="trade-card" style="border-color:rgba(6,214,160,0.25);">
+    <div class="trade-header">
+      <div>
+        <div style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px;">Gold · Long</div>
+        <div class="trade-pair" style="color:var(--gold)">XAU/USD</div>
+      </div>
+      <div>
+        <div class="trade-pnl" style="color:var(--green)">+$750.24</div>
+        <div style="font-size:12px;color:var(--green);text-align:right">+3.28%</div>
+      </div>
+    </div>
+    <div class="trade-grid">
+      <div class="trade-stat"><div class="trade-stat-label">Entry Price</div><div class="trade-stat-val">$2,302.10</div></div>
+      <div class="trade-stat"><div class="trade-stat-label">Current</div><div class="trade-stat-val" style="color:var(--gold)">$2,341.80</div></div>
+      <div class="trade-stat"><div class="trade-stat-label">Past P&L</div><div class="trade-stat-val" style="color:var(--green)">+$4,200</div></div>
+      <div class="trade-stat"><div class="trade-stat-label">Stop Loss</div><div class="trade-stat-val" style="color:var(--red)">$2,280.00</div></div>
+      <div class="trade-stat"><div class="trade-stat-label">Take Profit</div><div class="trade-stat-val" style="color:var(--green)">$2,380.00</div></div>
+      <div class="trade-stat"><div class="trade-stat-label">Size</div><div class="trade-stat-val">0.5 oz</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title" style="margin-bottom:12px;">Recent Execution Logs</div>
+    <table class="log-table">
+      <thead><tr><th>Timestamp</th><th>Pair</th><th>Action</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>11:31:44</td>
+          <td style="color:var(--gold)">XAU/USD</td>
+          <td>Position adjusted<br><span style="font-size:10px;color:var(--text3)">SL moved to $2,280</span></td>
+          <td><span class="badge badge-green" style="font-size:10px;">SUCCESS</span></td>
+        </tr>
+        <tr>
+          <td>11:18:12</td>
+          <td style="color:var(--gold)">XAU/USD</td>
+          <td>Liquidity scan<br><span style="font-size:10px;color:var(--text3)">Volume sweep detected</span></td>
+          <td><span class="badge badge-blue" style="font-size:10px;">INFO</span></td>
+        </tr>
+        <tr>
+          <td>10:45:09</td>
+          <td style="color:var(--gold)">XAU/USD</td>
+          <td>BUY executed<br><span style="font-size:10px;color:var(--text3)">0.5 oz @ $2,302.10</span></td>
+          <td><span class="badge badge-green" style="font-size:10px;">SUCCESS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

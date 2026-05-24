@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoMonitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav>
+  <div class="nav-logo">Algo<span>Monitor</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showScreen('feed',this)">Live Feed</button>
+    <button class="nav-tab" onclick="showScreen('perf',this)">Performance</button>
+    <button class="nav-tab" onclick="showScreen('trades',this)">Active Trades</button>
+    <button class="nav-tab" onclick="showScreen('analytics',this)">Analytics</button>
+  </div>
+  <div class="nav-right">
+    <div class="nav-balance">Balance: <strong>$42,850.24</strong></div>
+    <div class="status-dot"></div>
+  </div>
+</nav>
+
+<!-- ===================== SCREEN 1: LIVE ACTIVITY FEED ===================== -->
+<div class="screen active" id="screen-feed">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div class="page-title">Live Activity Feed</div>
+        <div class="page-sub">Real-time signal generation and execution signals</div>
+      </div>
+      <button class="btn-outline" style="font-size:11px;padding:5px 12px;">Report Log</button>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:1rem;">
+    <div class="card card-sm">
+      <div class="card-title">Symbol</div>
+      <div class="card-value" id="stat-symbol" style="font-size:18px;">—</div>
+      <div class="card-sub">Active signal</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Signal Check</div>
+      <div class="card-value" id="stat-reason" style="font-size:16px;">—</div>
+      <div class="card-sub">Reason code</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Direction</div>
+      <div class="card-value" id="stat-signal" style="font-size:16px;">—</div>
+      <div class="card-sub">Confidence: <span id="stat-confidence">—</span></div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Rebalancing</div>
+      <div class="card-value" style="font-size:16px;color:var(--gold)">Pending</div>
+      <div class="card-sub">XAU/USD</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:12px;">
+    <div class="card">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Signal Stream</div>
+          <div class="section-sub">Last 24 hours · XAU/USD focus</div>
+        </div>
+        <span class="badge badge-green">● LIVE</span>
+      </div>
+      <!-- Dynamic signal rows injected by main.js -->
+      <div id="signal-stream">
+        <div style="padding:20px 0;text-align:center;color:var(--text3);font-size:13px;">Loading signals...</div>
+      </div>
+      <div class="mini-chart" style="margin-top:16px;">
+        <div class="bar" style="height:40%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:35%"></div>
+        <div class="bar" style="height:70%"></div>
+        <div class="bar" style="height:60%"></div>
+        <div class="bar green" style="height:85%"></div>
+        <div class="bar green active" style="height:92%"></div>
+        <div class="bar green" style="height:75%"></div>
+        <div class="bar green" style="height:88%"></div>
+        <div class="bar green active" style="height:95%"></div>
+        <div class="bar green" style="height:80%"></div>
+        <div class="bar green" style="height:72%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:4px;">
+        <span style="font-size:10px;color:var(--text3)">Mon</span>
+        <span style="font-size:10px;color:var(--text3)">Tue</span>
+        <span style="font-size:10px;color:var(--text3)">Wed</span>
+        <span style="font-size:10px;color:var(--text3)">Thu</span>
+        <span style="font-size:10px;color:var(--text3)">Fri</span>
+        <span style="font-size:10px;color:var(--gold)">Now</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="card">
+        <div class="card-title">Price Action · XAU/USD</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+          <div class="card-value">$2,341.80</div>
+          <span class="badge badge-green">+1.28%</span>
+        </div>
+        <div class="card-sub">↑ $29.65 today</div>
+        <svg class="sparkline" viewBox="0 0 200 60" preserveAspectRatio="none" style="margin-top:10px;">
+          <polyline points="0,45 20,42 40,48 60,38 80,35 100,30 120,32 140,25 160,22 180,18 200,15" fill="none" stroke="var(--green)" stroke-width="1.5"/>
+          <polyline points="0,45 20,42 40,48 60,38 80,35 100,30 120,32 140,25 160,22 180,18 200,15 200,60 0,60" fill="url(#gfade)" opacity="0.15"/>
+          <defs><linearGradient id="gfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--green)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+        </svg>
+      </div>
+      <div class="card">
+        <div class="card-title" style="margin-bottom:10px;">System Health</div>
+        <div class="health-item">
+          <span class="health-label">System Status</span>
+          <div class="health-right"><div class="status-dot" style="width:6px;height:6px;"></div><span class="health-val" style="color:var(--green)">Active</span></div>
+        </div>
+        <div class="health-item"><span class="health-label">CPU Usage</span><span class="health-val">32%</span></div>
+        <div class="progress-wrap"><div class="progress-bar" style="width:32%;background:var(--blue)"></div></div>
+        <div class="health-item" style="margin-top:6px;"><span class="health-label">API Latency</span><span class="health-val">8ms</span></div>
+        <div class="progress-wrap"><div class="progress-bar" style="width:8%;background:var(--green)"></div></div>
+        <div class="health-item" style="margin-top:6px;"><span class="health-label">Signal Queue</span><span class="health-val" style="color:var(--gold)">3 pending</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SCREEN 2: PERFORMANCE ===================== -->
+<div class="screen" id="screen-perf">
+  <div class="page-header">
+    <div class="page-title">Performance Overview</div>
+    <div class="page-sub">Real-time analytical breakdown for XAU/USD</div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:1rem;">
+    <div class="card card-sm" style="border-color:rgba(6,214,160,0.3);">
+      <div class="card-title">Unrealized P&L</div>
+      <div class="card-value" style="color:var(--green);font-size:20px;">+$1,482.31</div>
+      <span class="badge badge-green" style="margin-top:4px;">+9.41%</span>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Total Profit</div>
+      <div class="card-value" style="font-size:20px;">$4,200</div>
+      <div class="card-sub" style="color:var(--green)">↑ above avg 15%</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Avg Drawdown</div>
+      <div class="card-value" style="font-size:20px;">2.1%</div>
+      <div class="card-sub" style="color:var(--green)">Max threshold 8.4%</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Daily Profit (7d)</div>
+      <div class="card-value" style="font-size:20px;">$600</div>
+      <div class="card-sub">Avg per session</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 280px;gap:12px;">
+    <div class="card">
+      <div class="section-header">
+        <div class="section-title">Equity Curve · XAU/USD</div>
+        <div style="display:flex;gap:8px;">
+          <span class="badge badge-blue">Trades</span>
+          <span class="badge badge-gold">Equity</span>
+        </div>
+      </div>
+      <svg width="100%" height="160" viewBox="0 0 500 160" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="equityGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,130 L40,125 L80,120 L120,110 L160,100 L200,95 L240,80 L280,70 L320,60 L360,55 L400,45 L440,40 L500,30" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M0,130 L40,125 L80,120 L120,110 L160,100 L200,95 L240,80 L280,70 L320,60 L360,55 L400,45 L440,40 L500,30 L500,160 L0,160Z" fill="url(#equityGrad)"/>
+        <circle cx="500" cy="30" r="4" fill="var(--gold)"/>
+      </svg>
+      <div style="display:flex;justify-content:space-between;margin-top:4px;">
+        <span style="font-size:10px;color:var(--text3)">30 days ago</span>
+        <span style="font-size:10px;color:var(--text3)">15 days ago</span>
+        <span style="font-size:10px;color:var(--gold)">Today</span>
+      </div>
+      <div class="divider"></div>
+      <div class="grid-3" style="gap:8px;">
+        <div>
+          <div class="card-title">Win Rate</div>
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--green)">68%</div>
+          <div class="card-sub" style="color:var(--green)">↑ above avg 4%</div>
+        </div>
+        <div>
+          <div class="card-title">Sharpe Ratio</div>
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;">2.34</div>
+          <div class="card-sub">Strong risk-adj return</div>
+        </div>
+        <div>
+          <div class="card-title">Trades (30d)</div>
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;">87</div>
+          <div class="card-sub">64 wins · 23 losses</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="card">
+        <div class="card-title" style="margin-bottom:10px;">Weekly Breakdown</div>
+        <div class="stat-row"><span class="stat-label">Monday</span><span class="stat-val" style="color:var(--green)">+$842</span></div>
+        <div class="stat-row"><span class="stat-label">Tuesday</span><span class="stat-val" style="color:var(--green)">+$1,204</span></div>
+        <div class="stat-row"><span class="stat-label">Wednesday</span><span class="stat-val" style="color:var(--red)">-$318</span></div>
+        <div class="stat-row"><span class="stat-label">Thursday</span><span class="stat-val" style="color:var(--green)">+$960</span></div>
+        <div class="stat-row"><span class="stat-label">Friday</span><span class="stat-val" style="color:var(--green)">+$512</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="margin-bottom:10px;">Risk Metrics</div>
+        <div class="stat-row"><span class="stat-label">Max Drawdown</span><span class="stat-val" style="color:var(--gold)">4.8%</span></div>
+        <div class="stat-row"><span class="stat-label">Profit Factor</span><span class="stat-val">2.87</span></div>
+        <div class="stat-row"><span class="stat-label">Expectancy</span><span class="stat-val" style="color:var(--green)">+$48</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SCREEN 3: ACTIVE TRADES ===================== -->
+<div class="screen" id="screen-trades">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div class="page-title">Active Trades</div>
+        <div class="page-sub" id="trades-sub">Loading...</div>
+      </div>
+      <span class="badge badge-gold">Portfolio $42,850</span>
+    </div>
+  </div>
+
+  <!-- Current open trade -->
+  <div id="open-trade-container">
+    <div style="padding:20px 0;text-align:center;color:var(--text3);font-size:13px;">Loading open trade...</div>
+  </div>
+
+  <!-- Past trades -->
+  <div class="card" style="margin-top:12px;">
+    <div class="section-title" style="margin-bottom:12px;">Past Trades</div>
+    <div id="past-trades-container">
+      <div style="padding:20px 0;text-align:center;color:var(--text3);font-size:13px;">Loading past trades...</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SCREEN 4: ANALYTICS ===================== -->
+<div class="screen" id="screen-analytics">
+  <div class="page-header">
+    <div class="page-title">Analytics</div>
+    <div class="page-sub">Active signal breakdown · System event log</div>
+  </div>
+
+  <!-- Active Signal Header -->
+  <div class="signal-detail-header" id="analytics-signal-header">
+    <div class="signal-type" id="an-signal-type">● LOADING...</div>
+    <div class="signal-title" id="an-signal-title">—</div>
+    <div class="signal-desc" id="an-signal-desc">—</div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap;">
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Entry Price</div>
+        <div id="an-entry" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--gold)">—</div>
+      </div>
+      <div style="height:40px;width:1px;background:var(--border)"></div>
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Stop Loss</div>
+        <div id="an-sl" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--red)">—</div>
+      </div>
+      <div style="height:40px;width:1px;background:var(--border)"></div>
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Take Profit</div>
+        <div id="an-tp" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--green)">—</div>
+      </div>
+      <div style="height:40px;width:1px;background:var(--border)"></div>
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">R:R</div>
+        <div id="an-rr" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--gold)">—</div>
+      </div>
+      <div style="height:40px;width:1px;background:var(--border)"></div>
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Confidence</div>
+        <div id="an-conf" style="font-family:var(--mono);font-size:20px;font-weight:700;">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Execution Snapshot + Signal Accuracy -->
+  <div class="grid-2" style="margin-bottom:1rem;">
+    <div class="indicator-card">
+      <div class="ind-label">Execution Snapshot</div>
+      <div class="exec-row"><span style="color:var(--text2)">Entry Type</span><span id="an-entry-type" style="font-family:var(--mono);font-size:12px;">—</span></div>
+      <div class="exec-row"><span style="color:var(--text2)">ML Regime</span><span id="an-regime" style="font-family:var(--mono);font-size:12px;">—</span></div>
+      <div class="exec-row"><span style="color:var(--text2)">ML Probability</span><span id="an-mlprob" style="font-family:var(--mono);font-size:12px;">—</span></div>
+      <div class="exec-row"><span style="color:var(--text2)">Valid Until</span><span id="an-valid" style="font-family:var(--mono);font-size:12px;">—</span></div>
+    </div>
+    <div class="indicator-card">
+      <div class="ind-label">Recent Signal Confidence</div>
+      <div id="signal-accuracy-list">
+        <div style="padding:10px 0;text-align:center;color:var(--text3);font-size:13px;">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- System Event Log -->
+  <div class="card">
+    <div class="section-title" style="margin-bottom:12px;">System Event Log</div>
+    <div id="system-events-log">
+      <div style="padding:20px 0;text-align:center;color:var(--text3);font-size:13px;">Loading events...</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== BOTTOM NAV (mobile) ===================== -->
+<div class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="bnav-tab active" onclick="showScreen('feed',this,true)">
+      <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Feed
+    </button>
+    <button class="bnav-tab" onclick="showScreen('perf',this,true)">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Performance
+    </button>
+    <button class="bnav-tab" onclick="showScreen('trades',this,true)">
+      <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Trades
+    </button>
+    <button class="bnav-tab" onclick="showScreen('analytics',this,true)">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Analytics
+    </button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

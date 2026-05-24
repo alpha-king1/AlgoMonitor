@@ -1,0 +1,129 @@
+<!-- =====================
+     SCREEN 1: LIVE ACTIVITY FEED
+     ===================== -->
+<div class="screen active" id="screen-feed">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div class="page-title">Live Activity Feed</div>
+        <div class="page-sub">Real-time signal generation and execution signals</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:1rem;">
+    <div class="card card-sm">
+      <div class="card-title">Data Ingested</div>
+      <div class="card-value" style="font-size:18px;">XAU/USD</div>
+      <div class="card-sub">Live feed active</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Signal Check</div>
+      <div class="card-value" style="font-size:16px;">EMA Cross</div>
+      <div class="card-sub">12/26 period</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Signal</div>
+      <div class="card-value" style="font-size:16px;color:var(--green)">LONG</div>
+      <div class="card-sub">Confidence 87%</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Rebalancing</div>
+      <div class="card-value" style="font-size:16px;color:var(--gold)">Pending</div>
+      <div class="card-sub">XAU/USD</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:12px;">
+    <div class="card">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Signal Stream</div>
+          <div class="section-sub">Last 24 hours · XAU/USD focus</div>
+        </div>
+        <span class="badge badge-green">● LIVE</span>
+      </div>
+      <div class="signal-row">
+        <div>
+          <div class="signal-pair">XAU/USD</div>
+          <div class="signal-meta">EMA 12/26 Crossover · Gold</div>
+        </div>
+        <span class="signal-action signal-buy">BUY</span>
+        <div class="signal-meta">2,341.80</div>
+        <span class="badge badge-green">+1.2%</span>
+      </div>
+      <div class="signal-row">
+        <div>
+          <div class="signal-pair">XAU/USD</div>
+          <div class="signal-meta">RSI Oversold Bounce</div>
+        </div>
+        <span class="signal-action signal-buy">BUY</span>
+        <div class="signal-meta">2,338.40</div>
+        <span class="badge badge-green">+0.8%</span>
+      </div>
+      <div class="mini-chart" style="margin-top:16px;">
+        <div class="bar" style="height:40%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:35%"></div>
+        <div class="bar" style="height:70%"></div>
+        <div class="bar" style="height:60%"></div>
+        <div class="bar green" style="height:85%"></div>
+        <div class="bar green active" style="height:92%"></div>
+        <div class="bar green" style="height:75%"></div>
+        <div class="bar green" style="height:88%"></div>
+        <div class="bar green active" style="height:95%"></div>
+        <div class="bar green" style="height:80%"></div>
+        <div class="bar green" style="height:72%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:4px;">
+        <span style="font-size:10px;color:var(--text3)">Mon</span>
+        <span style="font-size:10px;color:var(--text3)">Tue</span>
+        <span style="font-size:10px;color:var(--text3)">Wed</span>
+        <span style="font-size:10px;color:var(--text3)">Thu</span>
+        <span style="font-size:10px;color:var(--text3)">Fri</span>
+        <span style="font-size:10px;color:var(--gold)">Now</span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="card">
+        <div class="card-title">Price Action · XAU/USD</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+          <div class="card-value">$2,341.80</div>
+          <span class="badge badge-green">+1.28%</span>
+        </div>
+        <div class="card-sub">↑ $29.65 today</div>
+        <svg class="sparkline" viewBox="0 0 200 60" preserveAspectRatio="none" style="margin-top:10px;">
+          <polyline points="0,45 20,42 40,48 60,38 80,35 100,30 120,32 140,25 160,22 180,18 200,15" fill="none" stroke="var(--green)" stroke-width="1.5"/>
+          <polyline points="0,45 20,42 40,48 60,38 80,35 100,30 120,32 140,25 160,22 180,18 200,15 200,60 0,60" fill="url(#gfade)" opacity="0.15"/>
+          <defs><linearGradient id="gfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--green)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+        </svg>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="margin-bottom:10px;">System Health</div>
+        <div class="health-item">
+          <span class="health-label">System Status</span>
+          <div class="health-right">
+            <div class="status-dot" style="width:6px;height:6px;"></div>
+            <span class="health-val" style="color:var(--green)">Active</span>
+          </div>
+        </div>
+        <div class="health-item">
+          <span class="health-label">CPU Usage</span>
+          <span class="health-val">32%</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-bar" style="width:32%;background:var(--blue)"></div></div>
+        <div class="health-item" style="margin-top:6px;">
+          <span class="health-label">API Latency</span>
+          <span class="health-val">8ms</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-bar" style="width:8%;background:var(--green)"></div></div>
+        <div class="health-item" style="margin-top:6px;">
+          <span class="health-label">Signal Queue</span>
+          <span class="health-val" style="color:var(--gold)">3 pending</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

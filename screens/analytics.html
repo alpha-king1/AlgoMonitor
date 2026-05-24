@@ -1,0 +1,95 @@
+<!-- =====================
+     SCREEN 4: ANALYTICS / TRADE SIGNAL DETAIL
+     ===================== -->
+<div class="screen" id="screen-analytics">
+  <div class="page-header">
+    <div class="page-title">Trade Signal · XAU/USD</div>
+    <div class="page-sub">Friday, May 12 · Trade XAUUSD #29</div>
+  </div>
+
+  <div class="signal-detail-header">
+    <div class="signal-type">● BUY SIGNAL · Confirmed</div>
+    <div class="signal-title">XAU/USD Buy Signal</div>
+    <div class="signal-desc">The algorithm identified a strong multi-factor convergence. The signal identified a liquidity sweep below $2,300, followed by a liquidity sweep above $2,340.</div>
+    <div style="display:flex;align-items:center;gap:16px;margin-top:16px;">
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Entry Price</div>
+        <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--gold)">$2,302.10</div>
+      </div>
+      <div style="height:40px;width:1px;background:var(--border)"></div>
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Target</div>
+        <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--green)">$2,380.00</div>
+      </div>
+      <div style="height:40px;width:1px;background:var(--border)"></div>
+      <div>
+        <div class="card-title" style="margin-bottom:2px;">Current</div>
+        <div style="font-family:var(--mono);font-size:20px;font-weight:700;">$2,341.80</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:1rem;">
+    <div class="indicator-card">
+      <div class="ind-label">Volume Analysis</div>
+      <div class="ind-value" style="color:var(--green)">+150%</div>
+      <div class="ind-signal" style="color:var(--text2)">Above average volume — strong conviction</div>
+      <div class="mini-chart" style="height:40px;margin-top:10px;">
+        <div class="bar" style="height:30%"></div>
+        <div class="bar" style="height:45%"></div>
+        <div class="bar" style="height:40%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar green active" style="height:100%"></div>
+      </div>
+    </div>
+    <div class="indicator-card">
+      <div class="ind-label">Execution Snapshot</div>
+      <div class="exec-row"><span style="color:var(--text2)">Entry</span><span style="font-family:var(--mono);font-size:12px;">$2,302.10</span></div>
+      <div class="exec-row"><span style="color:var(--text2)">Stop</span><span style="font-family:var(--mono);font-size:12px;color:var(--red)">$2,280.00</span></div>
+      <div class="exec-row"><span style="color:var(--text2)">Target</span><span style="font-family:var(--mono);font-size:12px;color:var(--green)">$2,380.00</span></div>
+      <div class="exec-row"><span style="color:var(--text2)">R:R</span><span style="font-family:var(--mono);font-size:12px;color:var(--gold)">1:3.4</span></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem;">
+    <div class="section-title" style="margin-bottom:12px;">Signal Accuracy by Asset</div>
+    <table class="acc-table">
+      <thead><tr><th>Asset</th><th>Signals</th><th>Accuracy</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="asset-icon icon-gold">Au</span><span style="font-weight:600;">XAU/USD</span></td>
+          <td style="font-family:var(--mono)">162</td>
+          <td><span class="badge badge-green">84%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="section-title" style="margin-bottom:12px;">Algorithmic Reasoning Log</div>
+    <div class="algo-entry">
+      <div class="algo-time">10:01:01</div>
+      <div class="algo-content">
+        <div class="algo-action" style="color:var(--gold)">XAU/USD — RSI Trigger</div>
+        <div class="algo-detail">RSI 14-period reached below 32. Threshold exceeded — initiating liquidity pool mapping and entry confirmation sequence.</div>
+      </div>
+      <span class="badge badge-green" style="align-self:flex-start">ACT</span>
+    </div>
+    <div class="algo-entry">
+      <div class="algo-time">10:02:14</div>
+      <div class="algo-content">
+        <div class="algo-action" style="color:var(--blue)">XAU/USD — Volume Spike</div>
+        <div class="algo-detail">Transaction volume exceeded 180% of 20-period MA. Confidence level raised to 87% — order placement authorized.</div>
+      </div>
+      <span class="badge badge-blue" style="align-self:flex-start">INFO</span>
+    </div>
+    <div class="algo-entry">
+      <div class="algo-time">10:03:01</div>
+      <div class="algo-content">
+        <div class="algo-action" style="color:var(--green)">XAU/USD — BUY Order Dispatched</div>
+        <div class="algo-detail">Market buy order dispatched to broker at $2,302.10. Confidence interval: 87%. Execution confirmed.</div>
+      </div>
+      <span class="badge badge-green" style="align-self:flex-start">ACT</span>
+    </div>
+  </div>
+</div>

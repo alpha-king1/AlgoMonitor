@@ -1,0 +1,96 @@
+<!-- =====================
+     SCREEN 2: PERFORMANCE OVERVIEW
+     ===================== -->
+<div class="screen" id="screen-perf">
+  <div class="page-header">
+    <div class="page-title">Performance Overview</div>
+    <div class="page-sub">Real-time analytical breakdown for XAU/USD</div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:1rem;">
+    <div class="card card-sm" style="border-color:rgba(6,214,160,0.3);">
+      <div class="card-title">Unrealized P&L</div>
+      <div class="card-value" style="color:var(--green);font-size:20px;">+$1,482.31</div>
+      <span class="badge badge-green" style="margin-top:4px;">+9.41%</span>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Total Profit</div>
+      <div class="card-value" style="font-size:20px;">$4,200</div>
+      <div class="card-sub" style="color:var(--green)">↑ above avg 15%</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Avg Drawdown</div>
+      <div class="card-value" style="font-size:20px;">2.1%</div>
+      <div class="card-sub" style="color:var(--green)">Max threshold 8.4%</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-title">Daily Profit (7d)</div>
+      <div class="card-value" style="font-size:20px;">$600</div>
+      <div class="card-sub">Avg per session</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 280px;gap:12px;">
+    <div class="card">
+      <div class="section-header">
+        <div class="section-title">Equity Curve · XAU/USD</div>
+        <div style="display:flex;gap:8px;">
+          <span class="badge badge-blue">Trades</span>
+          <span class="badge badge-gold">Equity</span>
+        </div>
+      </div>
+      <svg width="100%" height="160" viewBox="0 0 500 160" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="equityGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,130 L40,125 L80,120 L120,110 L160,100 L200,95 L240,80 L280,70 L320,60 L360,55 L400,45 L440,40 L500,30" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M0,130 L40,125 L80,120 L120,110 L160,100 L200,95 L240,80 L280,70 L320,60 L360,55 L400,45 L440,40 L500,30 L500,160 L0,160Z" fill="url(#equityGrad)"/>
+        <circle cx="500" cy="30" r="4" fill="var(--gold)"/>
+      </svg>
+      <div style="display:flex;justify-content:space-between;margin-top:4px;">
+        <span style="font-size:10px;color:var(--text3)">30 days ago</span>
+        <span style="font-size:10px;color:var(--text3)">15 days ago</span>
+        <span style="font-size:10px;color:var(--gold)">Today</span>
+      </div>
+
+      <div class="divider"></div>
+      <div class="grid-3" style="gap:8px;">
+        <div>
+          <div class="card-title">Win Rate</div>
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--green)">68%</div>
+          <div class="card-sub" style="color:var(--green)">↑ above avg 4%</div>
+        </div>
+        <div>
+          <div class="card-title">Sharpe Ratio</div>
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;">2.34</div>
+          <div class="card-sub">Strong risk-adj return</div>
+        </div>
+        <div>
+          <div class="card-title">Trades (30d)</div>
+          <div style="font-family:var(--mono);font-size:22px;font-weight:700;">87</div>
+          <div class="card-sub">64 wins · 23 losses</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="card">
+        <div class="card-title" style="margin-bottom:10px;">Weekly Breakdown</div>
+        <div class="stat-row"><span class="stat-label">Monday</span><span class="stat-val" style="color:var(--green)">+$842</span></div>
+        <div class="stat-row"><span class="stat-label">Tuesday</span><span class="stat-val" style="color:var(--green)">+$1,204</span></div>
+        <div class="stat-row"><span class="stat-label">Wednesday</span><span class="stat-val" style="color:var(--red)">-$318</span></div>
+        <div class="stat-row"><span class="stat-label">Thursday</span><span class="stat-val" style="color:var(--green)">+$960</span></div>
+        <div class="stat-row"><span class="stat-label">Friday</span><span class="stat-val" style="color:var(--green)">+$512</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="margin-bottom:10px;">Risk Metrics</div>
+        <div class="stat-row"><span class="stat-label">Max Drawdown</span><span class="stat-val" style="color:var(--gold)">4.8%</span></div>
+        <div class="stat-row"><span class="stat-label">Profit Factor</span><span class="stat-val">2.87</span></div>
+        <div class="stat-row"><span class="stat-label">Expectancy</span><span class="stat-val" style="color:var(--green)">+$48</span></div>
+      </div>
+    </div>
+  </div>
+</div>
